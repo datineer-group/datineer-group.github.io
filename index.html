@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿]=<!DOCTYPE html>
 <html>
 	<title>Datineer Group</title>
 	<meta charset="UTF-8">
@@ -21,7 +21,8 @@
 
 	<!-- Image Header -->
 	<div class="w3-display-container w3-animate-opacity">
-		<img src="/images/primary.jpg" alt="primary.jpg" style="width:100%;min-height:350px;max-height:600px;">
+		<img src="images/primary.jpg" alt="primary.jpg" style="width:100%;min-height:350px;max-height:600px;">
+
 	</div>
 
 	<!-- Team Container -->
@@ -33,19 +34,29 @@
 			<br>
 
 			<div class="w3-quarter">
-				<img src="/images/ed.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+				<img src="images/ed.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
 				<h3>Ed Harary</h3>
 				<p>Principal</p>
 				<a href="mailto:ed@datineer.com?Subject=From%20www" target="_top">Send Mail</a>
 			</div>
 
 			<div class="w3-quarter">
-				<img src="/images/kenny.jpg" alt="Nerd" style="width:45%" class="w3-circle w3-hover-opacity">
+				<img src="images/kenny.jpg" alt="Nerd" style="width:45%" class="w3-circle w3-hover-opacity">
 				<h3>Kenny Lindberg</h3>
 				<p>Principal</p>
 				<a href="mailto:kenny@datineer.com?Subject=From%20www" target="_top">Send Mail</a>
 			</div>
 		</div>
+
+		<p>
+			We bring over 50 years of experience in the field of business strategy, business development, information technology, data analysis and design, data architecture, big data, data warehousing, business intelligence, software development and financial services.
+		<p>
+		</p>
+			Technical expertise in data modeling, data analytics and predictive analytics. deep knowledge in data warehouse, data engineering, ETL, reporting and data visualization. developing and maintaining enterprise-wide web based report systems and dashboards for POS, finance, business intelligence and strategy systems.
+		<p>
+		</p>
+			Experienced in implementing / managing large scale complex projects involving multiple stakeholders, leading and directing multiple project teams. A track record of delivering customer-focused, well-architected, quality projects on time, while adapting to shifting and conflicting demands and priorities. Experience in Data Warehouse / Business Intelligence developments, implementation and operation setup.
+		</p>
 	</div>
 
 	<!-- Work Row -->
@@ -53,7 +64,7 @@
 		<div class="w3-quarter">
 			<h2>Our Work</h2>
 			<p>TODO.</p>
-			<img src="/images/logo.jpg" alt="Datineer Group" style="width:45%" class="w3-circle w3-hover-opacity">
+			<img src="images/logo.png" alt="Datineer Group" style="width:45%" class="w3-circle w3-hover-opacity">
 		</div>
 	</div>
 
@@ -69,7 +80,7 @@
 				<p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> <a href="mailto:info@datineer.com?Subject=From%20www">info@datineer.com</a> </p>
 			</div>
 			<div class="w3-col m7">
-				<form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+				<!--<form class="w3-container w3-card-4 w3-padding-16 w3-white" target="_blank">-->
 					<div class="w3-section">
 						<label>Name</label>
 						<input class="w3-input" type="text" name="Name" required>
@@ -84,23 +95,22 @@
 					</div>
 					<div class="w3-section">
 						<label>Message</label>
-						<input class="w3-input" type="text" name="Message" required>
+						<input class="w3-input" type="text" name="Message" >
 					</div>
-					<button type="submit" class="w3-button w3-right w3-theme">Send</button>
-				</form>
+					<button class="w3-button w3-right w3-theme" onclick="sendMail(); return false" >Send</button>
+				<!--</form>-->
 			</div>
 		</div>
 	</div>
 
 	<!-- Image of location/map -->
-	<img src="/images/map.jpg" alt="map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+	<img src="images/map.jpg" alt="map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
 
 	<!-- Footer -->
 	<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
 		<h4>Follow Us</h4>
 		<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
 		<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
-		<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
 		<a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
 
 		<div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
@@ -114,19 +124,6 @@
 	</footer>
 
 	<script>
-		// Script for side navigation
-		function w3_open() {
-			var x = document.getElementById("mySidebar");
-			x.style.width = "300px";
-			x.style.paddingTop = "10%";
-			x.style.display = "block";
-		}
-
-		// Close side navigation
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
-		}
-
 		// Used to toggle the menu on smaller screens when clicking on the menu button
 		function openNav() {
 			var x = document.getElementById("navDemo");
@@ -136,7 +133,19 @@
 				x.className = x.className.replace(" w3-show", "");
 			}
 		}
-	</script>
 
+		function sendMail() {
+			var link = "mailto:info@datineer.com"
+				+ "&subject=" + escape("Datineer Contact Info")
+				+ "&body="
+				+ escape(document.getElementById('Name').value + "|")
+				+ escape(document.getElementById('Phone').value + "|")
+				+ escape(document.getElementById('Email').value + "|")
+				+ escape(document.getElementById('Message').value )
+				;
+
+			window.location.href = link;
+		}
+	</script>
 </body>
 </html>
